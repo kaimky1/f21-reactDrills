@@ -1,12 +1,34 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import "./App.css";
 
 function App() {
+  const [list, setList] = useState([
+    "spaghetti",
+    "ice cream",
+    "sushi",
+    "bologna",
+    "cheese",
+    "spa",
+  ]);
+
+  const [filtered, setFiltered] = useState("");
+
+  const array = list
+    .filter((element) => {
+      return element.includes(filtered);
+    })
+    .map((element, index) => {
+      console.log(element, index);
+      return <h1 key={index}>{element}</h1>;
+    });
+
+  const changeHandler = (e) => {
+    setFiltered(e.target.value);
+  };
   return (
     <div className="App">
-      test
-      
+      <input onChange={changeHandler}></input>
+      {array}
     </div>
   );
 }
