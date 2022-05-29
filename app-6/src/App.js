@@ -16,6 +16,7 @@ function App() {
       <input type="text" onChange={(e) => setInput(e.target.value)}/>
       <button onClick={() => setTasks([...tasks, input])}>Add Task</button>
       {displayTasks}
+      test
     </div>
   );
 }
