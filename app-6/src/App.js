@@ -11,6 +11,7 @@ function App() {
   })
 
   return (
+      //Confused about why setTasks can take in two variables.
     <div className="App">
       <input type="text" onChange={(e) => setInput(e.target.value)}/>
       <button onClick={() => setTasks([...tasks, input])}>Add Task</button>
