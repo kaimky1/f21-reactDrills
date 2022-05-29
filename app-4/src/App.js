@@ -26,7 +26,5 @@ function App() {
         <button> Login </button>
       </form>
     </div>
-  );
+  )
 }
-
-export default App;
