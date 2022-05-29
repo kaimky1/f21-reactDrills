@@ -1,19 +1,20 @@
 import React, {useState} from 'react';
+
 import './App.css';
 import NewTask from './components/NewTask';
+import List from './components/List';
 
 function App() {
   const [tasks, setTasks] = useState([])
 
-const addTaskHandler = (task) => {
-  console.log(task)
-  setTasks(...tasks, task)
-  console.log(tasks)
-}
+  const addTaskHandler = (task) => {
+    setTasks([...tasks, task])
+  }
 
   return (
     <div className="App">
-      <NewTask addTask={addTaskHandler}></NewTask>
+      <NewTask addTask={addTaskHandler} />
+      <List tasks={tasks}/>
     </div>
   );
 }
