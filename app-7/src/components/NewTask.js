@@ -4,7 +4,6 @@ import React, {useState} from 'react'
 
 const NewTask = (props) => {
     const [input, setInput] = useState('')
-
     const buttonHandler = () => {
       props.addTask(input)
     }
