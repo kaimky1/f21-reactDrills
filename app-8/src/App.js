@@ -1,11 +1,17 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios'
 import './App.css';
+import Card from './components/Card';
+import Test from './components/Test';
 
 const baseURL = "https://swapi.dev/api/people/1"
 
 function App() {
   const[post, setPost] = useState(null)
+
+  const [active, setActive] = useState("");
+
+
   useEffect(() => {
     axios.get(baseURL).then((response) => {
       console.log(response.data)
@@ -22,7 +28,8 @@ function App() {
   return (
     <div className="App">
       <h1>{post.name}</h1>
-      {array}
+      <button onClick={() => setActive("showMe")}>Click me!</button>
+      {active === "showMe" && array}
     </div>
   );
 }
